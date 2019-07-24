@@ -2,6 +2,9 @@
 
 use Matu\Ding\SendMessage;
 if (!function_exists('dingMsg')) {
+    /**
+     * @return bool|SendMessage
+     */
     function dingMsg()
     {
         $arguments = func_get_args();
