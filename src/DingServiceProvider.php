@@ -52,7 +52,9 @@ class DingServiceProvider extends ServiceProvider
      */
     protected function registerLaravelBindings()
     {
-
+        $this->app->singleton(SendMessage::class, function ($app) {
+            return new SendMessage();
+        });
     }
 
 }

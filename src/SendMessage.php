@@ -4,6 +4,7 @@
 namespace Matu\Ding;
 
 
+use Matu\Ding\Service\AccessTokenService;
 use Matu\Ding\service\SendMessageService;
 
 class SendMessage
@@ -22,12 +23,19 @@ class SendMessage
 
     protected $sendMessageService;
 
-    public function __construct(SendMessageService $sendMessageService)
+    public function __construct()
     {
 
-        $this->sendMessageService = $sendMessageService;
+        $this->sendMessageService = $this->create();
     }
 
+    /**
+     * @return SendMessageService
+     */
+    public function create()
+    {
+        return new SendMessageService(new AccessTokenService());
+    }
 
     public function text(string $content = '')
     {
