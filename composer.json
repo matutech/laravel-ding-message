@@ -1,0 +1,35 @@
+{
+    "name": "matu/laravel-ding",
+    "description": "码途钉钉群消息相关",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lost in you",
+            "email": "954630688@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Matu\\Ding\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "require": {
+        "php": ">=7"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.x.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Matu\\Ding\\DingServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
